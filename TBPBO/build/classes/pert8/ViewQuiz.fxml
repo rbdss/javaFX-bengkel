@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="1155.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Pert8Controller">
+   <children>
+      <Label alignment="CENTER" layoutX="79.0" layoutY="24.0" prefHeight="37.0" prefWidth="272.0" style="-fx-background-color: #757575;" text="Properties" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="323.0" text="Gender" />
+      <Label layoutX="43.0" layoutY="363.0" text="Continent" />
+      <GridPane layoutX="41.0" layoutY="85.0" prefHeight="169.0" prefWidth="177.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.0" minWidth="10.0" prefWidth="146.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Email" />
+            <Label text="Are you Gamer" GridPane.rowIndex="1" />
+            <Label text="Age range" GridPane.rowIndex="2" />
+            <Label text="Favorite YT Channel" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <TextField fx:id="txtEmail" layoutX="214.0" layoutY="96.0" AnchorPane.leftAnchor="210.0" />
+      <RadioButton fx:id="gamerYes" layoutX="215.0" layoutY="140.0" mnemonicParsing="false" selected="true" text="Yes" AnchorPane.leftAnchor="210.0" />
+      <RadioButton fx:id="gamerLittle" layoutX="274.0" layoutY="140.0" mnemonicParsing="false" text="Little" />
+      <RadioButton fx:id="gamerNo" layoutX="343.0" layoutY="140.0" mnemonicParsing="false" text="No" />
+      <ComboBox fx:id="ageRange" layoutX="213.0" layoutY="179.0" prefWidth="150.0" AnchorPane.leftAnchor="210.0" />
+      <CheckBox fx:id="cMusic" layoutX="213.0" layoutY="225.0" mnemonicParsing="false" text="Music" AnchorPane.leftAnchor="210.0" />
+      <CheckBox fx:id="cMovies" layoutX="213.0" layoutY="256.0" mnemonicParsing="false" text="Movies" AnchorPane.leftAnchor="210.0" />
+      <CheckBox fx:id="cEdu" layoutX="213.0" layoutY="286.0" mnemonicParsing="false" text="Education" AnchorPane.leftAnchor="210.0" />
+      <CheckBox fx:id="cReligion" layoutX="336.0" layoutY="224.0" mnemonicParsing="false" text="Religion" />
+      <CheckBox fx:id="cCook" layoutX="336.0" layoutY="255.0" mnemonicParsing="false" text="Cooking" />
+      <CheckBox fx:id="cSport" layoutX="336.0" layoutY="285.0" mnemonicParsing="false" text="Sport" />
+      <CheckBox fx:id="cOther" layoutX="459.0" layoutY="224.0" mnemonicParsing="false" text="Other" />
+      <TextField fx:id="txtOther" layoutX="459.0" layoutY="252.0" prefHeight="24.0" prefWidth="131.0" />
+      <RadioButton fx:id="gndrMale" layoutX="212.0" layoutY="322.0" mnemonicParsing="false" selected="true" text="Male" AnchorPane.leftAnchor="210.0" />
+      <RadioButton fx:id="gndrFemale" layoutX="290.0" layoutY="322.0" mnemonicParsing="false" text="Female" />
+      <RadioButton fx:id="rAsia" layoutX="210.0" layoutY="362.0" mnemonicParsing="false" selected="true" text="Asia" AnchorPane.leftAnchor="210.0" />
+      <RadioButton fx:id="rEurope" layoutX="322.0" layoutY="362.0" mnemonicParsing="false" text="Europe" />
+      <RadioButton fx:id="rAfrica" layoutX="427.0" layoutY="362.0" mnemonicParsing="false" text="Africa" />
+      <RadioButton fx:id="rAustralia" layoutX="210.0" layoutY="390.0" mnemonicParsing="false" text="Australia" />
+      <RadioButton fx:id="rAmerica" layoutX="322.0" layoutY="390.0" mnemonicParsing="false" text="America" />
+      <TableView fx:id="tblData" layoutX="607.0" layoutY="89.0" prefHeight="334.0" prefWidth="534.0">
+        <columns>
+          <TableColumn fx:id="clmEmail" prefWidth="75.0" text="Email" />
+          <TableColumn fx:id="clmGamer" prefWidth="75.0" text="Gamer" />
+            <TableColumn fx:id="clmAge" prefWidth="75.0" text="Age" />
+            <TableColumn fx:id="clmChannel" prefWidth="102.0" text="Fav Channel" />
+            <TableColumn fx:id="clmGender" prefWidth="77.0" text="Gender" />
+            <TableColumn fx:id="clmContinent" prefWidth="132.0" text="Continent" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnSave" layoutX="337.0" layoutY="430.0" mnemonicParsing="false" onAction="#saveTo" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #4dff64;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCancel" layoutX="461.0" layoutY="430.0" mnemonicParsing="false" onAction="#batal" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #ff4d4d;" text="Cancel" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Line endX="453.0" layoutX="142.0" layoutY="352.0" startX="-100.0" />
+      <Line endX="453.0" layoutX="142.0" layoutY="312.0" startX="-100.0" />
+   </children>
+</AnchorPane>
